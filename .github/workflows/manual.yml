@@ -46,7 +46,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04-arm
+    runs-on: ubuntu-20.04
     steps:
       - name: "Checkout Box64 Repository"
         uses: actions/checkout@v4
