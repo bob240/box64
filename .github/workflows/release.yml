@@ -24,4 +24,4 @@ jobs:
         tag_name: Box64
         name: Release
         files: |
-           box64/build/box64
+           /home/runner/work/box64/box64/build/box64
