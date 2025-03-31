@@ -11,9 +11,8 @@ jobs:
 
     - name: Prepare environment
       run: |
-        sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
         sudo apt update
-        sudo apt install apt-get -y install git cmake make python3 patchelf p7zip gcc-aarch64-linux-gnu -y
+        sudo apt -y install git cmake make python3 patchelf p7zip gcc-aarch64-linux-gnu -y
 
     - name: Execute build script
       run: bash ./build.sh
