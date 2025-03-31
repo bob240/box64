@@ -13,7 +13,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt -y install git cmake make python3 patchelf p7zip gcc-aarch64-linux-gnu -y
-
+        export PATH=$PATH:/usr/aarch64-linux-gnu/bin
     - name: Execute build script
       run: bash ./build.sh
 
