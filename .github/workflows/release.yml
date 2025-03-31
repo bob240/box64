@@ -24,4 +24,4 @@ jobs:
         tag_name: Box64
         name: Release
         files: |
-           $HOME/box64/build/box64
+           box64/build/box64
