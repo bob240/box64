@@ -5,7 +5,7 @@ on:
 
 jobs:
   start_building_box64:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
 
@@ -20,8 +20,9 @@ jobs:
     - name: Release "Box64"
       uses: softprops/action-gh-release@v1
       with:
-        body: box64 for winlator10
+        body: box64 build arm64
         tag_name: Box64
         name: Release
         files: |
-           /home/runner/work/box64/box64/box64/build/box64
+           /home/runner/work/box64/box64/box64/build/box64_w10.tar.zst
+           /home/runner/work/box64/box64/box64/build/box64_w10u.tar.zst
