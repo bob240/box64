@@ -1,4 +1,4 @@
-name: Build "Box64_winlator10"
+name: Build "Box64"
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
     - name: Prepare environment
       run: |
         sudo apt update
-        sudo apt -y install git cmake make python3 patchelf p7zip gcc-aarch64-linux-gnu -y
+        sudo apt -y install git cmake make python3 patchelf zstd p7zip gcc-aarch64-linux-gnu -y
         export PATH=$PATH:/usr/aarch64-linux-gnu/bin
     - name: Execute build script
       run: bash ./build.sh
