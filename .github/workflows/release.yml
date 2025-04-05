@@ -21,8 +21,10 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         body: box64 build arm64
-        tag_name: Box64
+        tag_name: box64new
         name: Release
         files: |
            /home/runner/work/box64/box64/box64/build/box64_w10.tar.gz
            /home/runner/work/box64/box64/box64/build/box64_w10u.tar.gz
+           /home/runner/work/box64/box64/box64/buildNo32/box64_w10u.tar.gz
+           /home/runner/work/box64/box64/box64/buildNo32/box64_w10.tar.gz
