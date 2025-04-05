@@ -26,5 +26,5 @@ jobs:
         files: |
            /home/runner/work/box64/box64/box64/build/box64_w10.tar.gz
            /home/runner/work/box64/box64/box64/build/box64_w10u.tar.gz
-           /home/runner/work/box64/box64/box64/buildNo32/box64_w10u.tar.gz
-           /home/runner/work/box64/box64/box64/buildNo32/box64_w10.tar.gz
+           /home/runner/work/box64/box64/box64/buildNo32/box64_w10u_nobox32.tar.gz
+           /home/runner/work/box64/box64/box64/buildNo32/box64_w10_nobox32.tar.gz
