@@ -4,14 +4,22 @@ mkdir build
 cd build
 cmake .. -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc -DARM64=1 -DWINLATOR_GLIBC=1 -DARM_DYNAREC=1 -DBAD_SIGNAL=1 -DCMAKE_BUILD_TYPE=Release -DBOX32=1
 make -j
-tar -zvcf ./box64_w10u.tar.gz ./box64
-patchelf --set-interpreter /data/data/com.winlator/files/rootfs/lib/ld-linux-aarch64.so.1 ./box64
-tar -zvcf ./box64_w10.tar.gz ./box64
+mkdir -p ./usr/local/bin
+mv ./box64 ./usr/local/bin/
+tar -cf ./box64_wp_box32.tar ./usr/local/bin/box64
+zstd -z ./box64_wp_box32.tar
+patchelf --set-interpreter /data/data/com.winlator/files/rootfs/lib/ld-linux-aarch64.so.1 ./usr/local/bin/box64
+tar -cf ./box64_w10_box32.tar ./usr/local/bin/box64
+zstd -z ./box64_w10_box32.tar
 cd ..
 mkdir buildNo32
 cd buildNo32
 cmake .. -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc -DARM64=1 -DWINLATOR_GLIBC=1 -DARM_DYNAREC=1 -DBAD_SIGNAL=1 -DCMAKE_BUILD_TYPE=Release
 make -j
-tar -zvcf ./box64_w10u_nobox32.tar.gz ./box64
-patchelf --set-interpreter /data/data/com.winlator/files/rootfs/lib/ld-linux-aarch64.so.1 ./box64
-tar -zvcf ./box64_w10_nobox32.tar.gz ./box64
+mkdir -p ./usr/local/bin
+mv ./box64 ./usr/local/bin/
+tar -cf ./box64_wp.tar ./usr/local/bin/box64
+zstd -z ./box64_wp.tar
+patchelf --set-interpreter /data/data/com.winlator/files/rootfs/lib/ld-linux-aarch64.so.1 ./usr/local/bin/box64
+tar -cf ./box64_w10.tar ./usr/local/bin/box64
+zstd -z ./box64_w10.tar
